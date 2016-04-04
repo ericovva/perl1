@@ -14,8 +14,12 @@ sub next{
 }
 sub all{
 	my ($self) = @_;
-	my @ar = @{$self->array}[$self->current..$#{$self->array}];
-	$self->current($#{$self->array} + 1);
+	my ($next,$end) = $self->next();
+	my @ar;
+	while(!$end){
+		push(@ar,$next);
+		($next,$end) = $self->next();
+	} 
 	return \@ar;
 }
 1;

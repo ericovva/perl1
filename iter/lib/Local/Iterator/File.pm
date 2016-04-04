@@ -25,12 +25,12 @@ sub next{
 }
 sub all{
 	my ($self) = @_;
-	my $fh = $self->fh;
-	my @res;
-	while(<$fh>){
-		chomp;
-		push (@res,$_);
-	}
-	return \@res;
+	my ($next,$end) = $self->next();
+	my @ar;
+	while(!$end){
+		push(@ar,$next);
+		($next,$end) = $self->next();
+	} 
+	return \@ar;
 }
 1;
