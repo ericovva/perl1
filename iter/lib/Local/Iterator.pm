@@ -1,24 +1,13 @@
-package Local::Iterator;
-
-use strict;
-use warnings;
-
-=encoding utf8
-
-=head1 NAME
-
-Local::Iterator - base abstract iterator
-
-=head1 VERSION
-
-Version 1.00
-
-=cut
-
-our $VERSION = '1.00';
-
-=head1 SYNOPSIS
-
-=cut
-
+package Iterator;
+use Mouse;
+sub all{
+	my ($self) = @_;
+	my ($next,$end) = $self->next();
+	my @ar;
+	while(!$end){
+		push(@ar,$next);
+		($next,$end) = $self->next();
+	} 
+	return \@ar;
+}
 1;

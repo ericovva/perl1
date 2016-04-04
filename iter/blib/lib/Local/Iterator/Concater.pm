@@ -1,8 +1,8 @@
 package Local::Iterator::Concater;
 use Mouse;
-use lib::Local::Iterator::Iterator;
+use Iterator;
 
-extends 'Local::Iterator::Iterator';
+extends 'Iterator';
 has 'iterators' => (is => 'rw',isa => 'ArrayRef');
 has 'current' => (is => 'rw',isa => 'Int',default => sub {return 0});
 sub next{

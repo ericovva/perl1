@@ -1,8 +1,8 @@
 package Local::Iterator::File;
 use Mouse;
-use lib::Local::Iterator::Iterator;
+use Iterator;
 
-extends 'Local::Iterator::Iterator';
+extends 'Iterator';
 has 'filename' => (is => 'ro',isa => 'Str');
 has 'fh' =>(is => 'rw',isa => 'FileHandle',
 			builder => 'open_file');
