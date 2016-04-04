@@ -1,4 +1,4 @@
-package Iterator;
+package Local::Iterator;
 use Mouse;
 sub all{
 	my ($self) = @_;

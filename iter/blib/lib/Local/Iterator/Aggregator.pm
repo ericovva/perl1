@@ -1,8 +1,8 @@
 package Local::Iterator::Aggregator;
 use Mouse;
-use Iterator;
+use Local::Iterator;
 
-extends 'Iterator';
+extends 'Local::Iterator';
 has 'iterator' => (is => 'ro', isa => 'Object');
 has 'chunk_length' => (is => 'ro', isa => 'Int');
 sub next{

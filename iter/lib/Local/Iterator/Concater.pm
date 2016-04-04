@@ -1,10 +1,10 @@
 package Local::Iterator::Concater;
 use Mouse;
-use Iterator;
+use Local::Iterator;
 
-extends 'Iterator';
+extends 'Local::Iterator';
 has 'iterators' => (is => 'rw',isa => 'ArrayRef');
-has 'current' => (is => 'rw',isa => 'Int',default => sub {return 0});
+has 'current' => (is => 'rw',isa => 'Int',default => 0);
 sub next{
 	my ($self) = @_;
 	my ($next,$end);

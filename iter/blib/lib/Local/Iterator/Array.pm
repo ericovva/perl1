@@ -1,11 +1,10 @@
 package Local::Iterator::Array;
 use Mouse;
-use Iterator;
+use Local::Iterator;
 
-extends 'Iterator';
+extends 'Local::Iterator';
 has 'array' => (is => 'ro', isa => 'ArrayRef');
-has 'current' => (is => 'rw', isa => 'Int', 
-				  default => sub {return 0});
+has 'current' => (is => 'rw', isa => 'Int', default => 0);
 sub next{
 	my ($self) = @_;
 	my $i = $self->current;
