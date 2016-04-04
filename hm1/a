@@ -1,1 +1,0 @@
-ls -l | perl -na -e 'BEGIN{$t=0;$tb=0;$tc=-1;$tbc=0;} if ($F[4]<1024*1024){  $i=8; while($i <= $#F){ print $F[$i] . " "; $i++;} print "\n"; $tb+= $F[4]; $tbc++;} $t+=$F[4];$tc++;  END{print "TOTAL: $t byte $tc files\nBIGGER then 1 MB: $tb byte $tbc files\n"}'
