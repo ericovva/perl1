@@ -32,36 +32,30 @@ my $fn = 'testfile';
 # say $iterator3->next();
 #p @{[qw(C D E)]};
 #aggregator
-#  my $iterator = Local::Iterator::Aggregator->new(
-#     iterator => Local::Iterator::File->new(filename => $fn),
-#     chunk_length => 2,
-# );
-
-# my ($next,$end) = $iterator->next();
-# p $next;
-# p $iterator->all();
-# ($next,$end) = $iterator->next();
-# p $next;
-# ($next,$end) = $iterator->next();
-# p $next;
-# ($next,$end) = $iterator->next();
-# p $next;
-# ($next,$end) = $iterator->next();
-# p $next;
-my $iterator = Local::Iterator::Concater->new(
-    iterators => [
-        Local::Iterator::Array->new(array => [1, 2]),
-        Local::Iterator::Array->new(array => [3, 4]),
-        Local::Iterator::Array->new(array => [5, 6]),
-    ],
+my $iterator = Local::Iterator::Aggregator->new(
+    iterator => Local::Iterator::Array->new(array => [1, 2, 3, 4, 5, 6, 7]),
+    chunk_length => 2,
 );
+
 my ($next, $end);
 
-($next, $end) = $iterator->next();
-say $next;
+p $iterator->next();
 p $iterator->all();
-($next, $end) = $iterator->next();
-p $next;
+p $iterator->next(); 
+# my $iterator = Local::Iterator::Concater->new(
+#     iterators => [
+#         Local::Iterator::Array->new(array => [1, 2]),
+#         Local::Iterator::Array->new(array => [3, 4]),
+#         Local::Iterator::Array->new(array => [5, 6]),
+#     ],
+# );
+# my ($next, $end);
+
+# ($next, $end) = $iterator->next();
+# say $next;
+# p $iterator->all();
+# ($next, $end) = $iterator->next();
+# p $next;
 
 
 

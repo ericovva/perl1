@@ -1,8 +1,8 @@
 package Local::Iterator::File;
 use Mouse;
-use strict;
-use warnings;
-use Data::Printer;
+use lib::Local::Iterator::Iterator;
+
+extends 'Local::Iterator::Iterator';
 has 'filename' => (is => 'ro',isa => 'Str');
 has 'fh' =>(is => 'rw',isa => 'FileHandle',
 			builder => 'open_file');
@@ -22,15 +22,5 @@ sub next{
 	}
 	return (undef,1);
 
-}
-sub all{
-	my ($self) = @_;
-	my ($next,$end) = $self->next();
-	my @ar;
-	while(!$end){
-		push(@ar,$next);
-		($next,$end) = $self->next();
-	} 
-	return \@ar;
 }
 1;

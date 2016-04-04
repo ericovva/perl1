@@ -1,9 +1,8 @@
 package Local::Iterator::Concater;
-
-use strict;
-use warnings;
-use Data::Printer;
 use Mouse;
+use lib::Local::Iterator::Iterator;
+
+extends 'Local::Iterator::Iterator';
 has 'iterators' => (is => 'rw',isa => 'ArrayRef');
 has 'current' => (is => 'rw',isa => 'Int',default => sub {return 0});
 sub next{
@@ -18,16 +17,6 @@ sub next{
 		($next,$end) = ${$self->iterators}[$self->current]->next();
 	}
 	return ($next,$end);
-}
-sub all{
-	my ($self) = @_;
-	my @result;
-	my ($next,$end) = $self->next();
-	while(!$end){
-		push (@result,$next);
-		($next,$end) = $self->next();
-	}
-	return \@result;
 }
 
 1;
