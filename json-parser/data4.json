@@ -1,0 +1,4 @@
+{ "key1": "string value", "key2": -3.1415, "key3": [true,false,null], 
+
+
+"key4": { "nested": "object" } }

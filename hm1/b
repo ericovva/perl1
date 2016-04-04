@@ -1,0 +1,1 @@
+perl -naF':' -MData::Dumper -MData::Printer -e 'BEGIN{  @ar = (); $k=0; }   $j=0; @ar2=();  foreach (@F) { push (@ar2,$_);  if ("$_" =~ /^[+-]?\d+$/ && $_ > 10) { print "i: $k j: $j --- $_\n"  } $j++; }$k++; push (@ar,[@ar2]);  END {print Dumper(@ar); p @ar;}' input

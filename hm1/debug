@@ -1,0 +1,13 @@
+b 11 $j == 4
+c
+w $ans
+w @ar2
+s
+s
+s
+c 13
+s
+c 13
+s
+s
+r
