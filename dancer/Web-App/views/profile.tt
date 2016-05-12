@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<style>
+.profile{
+	width: 100%;
+}
+
+</style>
+
+
+<div  class = "main_layout">
+	<div class "profile"> 
+		<h1> Profile </h1> <br/>
+		Username : <% username %>
+		<br/>
+		Project link: 
+		<br/><br/>
+	</div>
+	<button> Change anything </button>
+		<div class= "change">
+			
+			<form enctype="multipart/form-data" class="form" id="form_41983" name="form_submit" accept-charset="utf-8" action="/change_username" method="post">
+				<input class="text required"  type="text" name="username" placeholder="New username" value="">
+				<button id="change_username" type="submit"> Change username </button>
+			</form>
+			
+			<form enctype="multipart/form-data" class="form" id="form_41983" name="form_submit" accept-charset="utf-8" action="/change_password" method="post">
+				<input class="text required"  type="text" name="password0" placeholder="Old pass" value="">
+				<br/>
+				<input class="text required"  type="text" name="password1" placeholder="New pass" value="">
+				<input class="text required"  type="text" name="password2" placeholder="Repeat New pass" value="">
+				<button id="change_password" type="submit"> Change password </button>
+			</form>
+
+			<form enctype="multipart/form-data" class="form" id="form_41983" name="form_submit" accept-charset="utf-8" action="/change_link" method="post">
+				<input class="text required"  type="text" name="link" placeholder="New link" value="">
+				<button type="submit" id="change_link"> Change link </button>
+			</form>
+			<p2> <%message%></p2>
+		</div>
+<div>

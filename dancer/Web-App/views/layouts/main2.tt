@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="<% settings.charset %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title> Админ </title>
+</head>
+<body>
+	<% IF auth%>
+	Menu <br/>
+	<a href = "/admin"> Users </a> </br>
+	<a href = "/admin/rate-limits"> Rate-limits </a> </br>
+	<a href = "/admin/users"> Delete users </a>
+	<br/><br/><br/><br/>
+	<% END %>
+	<div>
+	        <% content %>
+	 </div>
+</body>
+</html>

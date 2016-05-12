@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<div class="mainForm user_formish " style="width: 50%;">
+<form enctype="multipart/form-data" class="form" id="form_41983" name="form_submit" accept-charset="utf-8" action="/token" method="post">
+
+<button type="submit" class="submit" name="submit" value="send">Generate</button>
+<label id="token"><% token %></label>
+<br/>
+<br/>
+</form>
+<button id="copy_token">Copy token to clipboard</button>
+<!-- SAFARI DON'T SUPPORT-->
+<script>
+	var tmp = document.getElementById('copy_token');
+	tmp.addEventListener('click',function(){
+		 var token = document.getElementById('token');  
+		  var range = document.createRange();  
+		  range.selectNode(token);  
+		  window.getSelection().addRange(range);  
+		   console.log(range);
+		  try {  
+		    var successful = document.execCommand('copy');  
+		    var msg = successful ? 'successful' : 'unsuccessful';  
+		    console.log('Copy email command was ' + msg);  
+		  } catch(err) {  
+		    console.log('Oops, unable to copy');  
+		  }  
+
+		  window.getSelection().removeAllRanges();  
+	});
+</script>
+</div>

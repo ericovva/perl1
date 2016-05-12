@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="<% settings.charset %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title> Калькулятор </title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="<% request.uri_base %>/css/style.css">
+
+<!-- Grab jQuery from a CDN, fall back to local if necessary -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">/* <![CDATA[ */
+    !window.jQuery && document.write('<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery.js"><\/script>')
+/* ]]> */</script>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+  <div class="middle">
+
+    <div class="container">
+      <main class="content">
+      	<br/><br/><br/><br/><br/>
+        <% content %>
+      </main><!-- .content -->
+    </div><!-- .container-->
+
+    <aside class="left-sidebar">
+    	<br/><br/><br/><br/>
+    	<% UNLESS auth %>
+    	<a href = "/auth" style="text-decoration: none;">
+    	<div class="i2Style">Sign in</div> </a>
+  		<br/>
+  		<br/>
+  		<a href = "/reg" style="text-decoration: none;">
+    	<div class="i2Style">Sign up</div>
+  		<br/>
+  		<br/>
+  		<% ELSE %>
+  		<a href = "/profile" style="text-decoration: none;">
+    	<div class="i2Style">  Profile</div>
+  		<br/>
+  		<br/>
+  		<a href = "/token" style="text-decoration: none;">
+    	<div class="i2Style">Token</div>
+  		<br/>
+  		<br/>
+  		<a href = "/xml-rpc" style="text-decoration: none;">
+    	<div class="i2Style">XML-RPC</div>
+  		<br/>
+  		<br/>
+  		<a href = "/logout" style="text-decoration: none;">
+    	<div class="i2Style">
+    		<img src = "https://cdn2.iconfinder.com/data/icons/classic-development-circle/512/open_tank-512.png"/>
+    	</div>
+  		<br/>
+        <% END %>
+    </aside><!-- .left-sidebar -->
+
+  </div><!-- .middle-->
+
+</div><!-- .wrapper -->
+
+
+</body>
+</html>

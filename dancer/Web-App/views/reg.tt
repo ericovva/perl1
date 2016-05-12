@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<div class="mainForm user_formish " style="width: 50%;">
+                    <h3>If you sign up you have a unique opportunity to use the calculator 
+                    	<br/><br/><pre style='color: red;'><% error %></h3></pre>
+
+
+<form enctype="multipart/form-data" class="form" id="form_41983" name="form_submit" accept-charset="utf-8" action="/reg" method="post">
+<div class="pages">
+<div class="page current" id="page_1">
+  <div id="i321169" class="shift  type-text">
+<label class="label required" for="field321169">Username <span class="required">*</span></label>
+
+<div class="unit"><input class="text required" style="width:100%;" type="text" name="username" ></div>
+</div>
+<div id="i321173" class="shift  type-password">
+<label class="label required" for="field321173">Password <span class="required">*</span></label>
+
+<div class="unit"><input class="text required" style="width:100%;" type="password" name="password1" id="field321173" data-id="321173" placeholder="" value=""></div>
+</div>
+<div id="i321174" class="shift  type-password">
+<label class="label required" for="field321174">Repeat password <span class="required">*</span></label>
+
+<div class="unit"><input class="text required" style="width:100%;" type="password" name="password2" id="field321174" data-id="321174" placeholder="" value=""></div>
+</div>
+
+<div id="i321172" class="shift  type-url">
+<label class="label" for="field321172">Link to your peoject</label>
+
+<div class="unit"><input class="text url" style="width:100%;" type="text" name="link" id="field321172" data-id="321172" placeholder="http://" value=""></div>
+</div>
+</div>
+</div>
+
+<div class="shift btn"><button type="submit" class="submit" name="submit" value="send">Sign up</button></div>
+<br/>
+</form>
+<div class="overlay"></div><div class="progress"><div class="bar">Подождите, идет отправка данных...</div></div>                  </div>

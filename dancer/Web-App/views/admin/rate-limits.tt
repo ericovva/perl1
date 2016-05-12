@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<div class="mainForm user_formish " style="width: 50%;">
+<%error%>
+<br/><br/><br/>
+CHANGE RATE LIMITS <br/>
+<form enctype="multipart/form-data" class="form" id="form_41983" name="form_submit" accept-charset="utf-8" action="/admin/change_rate" method="post">
+	<table style="border: green solid 1px;">
+	<tr style="border: green solid 1px;">
+	  <td style="border: green solid 1px;">id</td>  
+	  <td style="border: green solid 1px;">username</td>   
+	  <td style="border: green solid 1px;">token</td>  
+	  <td style="border: green solid 1px;">rate limits</td>   
+	  <td style="border: green solid 1px;">project ref</td>
+	  <td style="border: blue solid 1px;">change rate limits</td>
+	</tr>
+<% FOREACH user IN users %>
+	<tr style="border: green solid 1px;">
+	  <td style="border: green solid 1px;"><%user.id%></td>  
+	  <td style="border: green solid 1px;"><%user.username%></td>   
+	  <td style="border: green solid 1px;"><%user.token%></td>  
+	  <td style="border: green solid 1px;"><%user.rate_limits%></td>   
+	  <td style="border: green solid 1px;"><a href="<%user.project_ref%>"> project<a/></td>
+	  <td style="border: blue solid 1px;">
+	  		<input type="text" name="rate_limit_count_<%user.username%>" placeholder="New rate limit count" value="">
+	  		<button style="cursor: pointer;"type="submit" name="username" value="<%user.username%>" > Appoint new rate limit </button>
+	  </td>
+	</tr>
+<% END %>
+	</table>
+<br/>
+</form>
+</div>
