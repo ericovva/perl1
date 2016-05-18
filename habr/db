@@ -1,0 +1,22 @@
+CREATE TABLE Post
+(
+id int AUTO_INCREMENT,
+theme varchar(1000),
+author int(11),
+shows int(11),
+rating double,
+stars int(11),
+post_id int(11),
+PRIMARY KEY(id,theme),
+FOREIGN KEY (author) REFERENCES User (id)
+);
+
+CREATE TABLE Comment
+(
+id int AUTO_INCREMENT,
+author int(11),
+post int(11),
+PRIMARY KEY(id),
+FOREIGN KEY (author) REFERENCES User (id),
+FOREIGN KEY (post) REFERENCES Post (id)
+);
